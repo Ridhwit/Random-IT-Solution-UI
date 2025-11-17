@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Details</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Be Vietnam Pro;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+  }
+</style>
+
+<style>
+  .navbar {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 80px;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .logo img {
+    height: 45px;
+    max-width: 100%;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+
+  .nav-links li.active a {
+    background-color: #2e1a85;
+    color: white;
+  }
+
+  .nav-links li a:hover {
+    color: #2e1a85;
+  }
+
+  .contact-btn {
+    background-color: #e0301e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 22px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .contact-btn:hover {
+    background-color: #c12717;
+  }
+
+  @media (max-width: 950px) {
+    .navbar {
+      padding: 15px 30px;
+      justify-content: center;
+    }
+    .nav-links {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .navbar {
+      padding: 15px 20px;
+    }
+  }
+</style>
+
+<header class="navbar">
+  <div class="logo"><img src="RIS logo.png" alt="RIS Logo"></div>
+
+  <ul class="nav-links">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Team</a></li>
+    <li><a href="#">Tech Partner</a></li>
+    <li><a href="#">Our Projects</a></li>
+    <li><a href="#">Our Services</a></li>
+    <li><a href="#">Career</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+
+  <button class="contact-btn">Contact Us</button>
+</header>
+
+<style>
+  .tag-strip {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5) url('sign.jpg') center/cover no-repeat;
+    padding: 12px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    backdrop-filter: blur(3px);
+  }
+
+  .tag {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 12px;
+    margin: 0 12px;
+    padding: 6px 12px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: 0.3s ease;
+  }
+
+  .tag:hover {
+    color: #e63946;
+  }
+
+  .tag.active {
+    color: #e63946;
+    font-weight: 600;
+  }
+</style>
+
+<div class="tag-strip">
+  <span class="tag active">All</span>
+  <span class="tag">Installing OS</span>
+  <span class="tag">Problem Diagnosis</span>
+  <span class="tag">Web Design</span>
+  <span class="tag">Cloud Computing</span>
+  <span class="tag">New Computer Setup</span>
+  <span class="tag">Repair & Maintenance</span>
+  <span class="tag">Cloud Computing</span>
+  <span class="tag">Cloud Computing</span>
+  <span class="tag">All</span>
+  <span class="tag">IN</span>
+</div>
+
+<style>
+  .article-container {
+    max-width: 1250px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .article-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #111;
+  }
+
+  .article-meta {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    color: #555;
+  }
+
+  .article-meta i {
+    margin-right: 6px;
+    color: #e63946;
+  }
+
+  .article-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: 768px) {
+    .article-image { height: 300px; }
+  }
+  @media (max-width: 480px) {
+    .article-image { height: 220px; }
+  }
+
+  .article-content p {
+    font-size: 15px;
+    margin-bottom: 18px;
+    color: #555;
+    text-align: justify;
+  }
+</style>
+
+<div class="article-container">
+  <h1 class="article-title">IT Solutions and Services</h1>
+  <div class="article-meta"><i class="fa-regular fa-calendar"></i> 03-03-2024</div>
+
+  <img src="maw.jpg" class="article-image" alt="IT Solutions and Services">
+
+  <div class="article-content">
+    <p>Sky City by Oberoi Realty is a new residential project in Mumbai’s Andheri-Dahisar district, located in the booming suburb of Borivali East. Sky City, developed by Oberoi Realty, provides a variety of economical and elegantly constructed apartments and villas, making it a great alternative for homeowners seeking a low-budget yet luxurious living experience.</p>
+    <p>Sky City is a huge 25-acre development with six skyscrapers now under construction. The project is expected to reinvent the notion of large living, with intelligently built apartments and villas in 3BHK, 4BHK, 6BHK, and 7BHK configurations. Furthermore, magnificent 2BHK villas are offered to meet the different demands and tastes of potential customers.</p>
+    <p>Oberoi Realty’s Sky City is RERA-registered under the registration number P51800003582, assuring transparency and adherence to quality standards. The project is painstakingly designed, both inside and externally, and is slated for completion in December 2023. The development is moving quickly, and a significant number of units have already been sold, demonstrating the project’s attractiveness among homeowners.</p>
+    <p>Sky City, with its prominent location in Borivali East, provides a great connection to important districts of Mumbai. Residents will have easy access to nearby educational institutions, healthcare services, retail complexes, and entertainment venues. The strategic placement of the project also allows for seamless access to key road networks and transit hubs, making everyday commuting more comfortable.</p>
+    <p>Sky City by Oberoi Realty has an appealing pricing list, with 3BHK apartments beginning at Rs. 3.16 crore, 4BHK apartments starting at Rs. 3.75 crore, and 6BHK apartments starting at Rs. 7.21 crore. Furthermore, the property provides 2 BHK villas beginning at Rs. 79 lakhs. Sky City is an appealing alternative for both end-users and investors due to its affordability and Oberoi Realty’s brand recognition.</p>
+    <p>Overall, Sky City by Oberoi Realty is the pinnacle of affordable luxury, combining comfort, beauty, and a desirable lifestyle. The project aims to provide a living environment that exceeds expectations and meets the ambitions of its residents, with well-designed houses, extensive green areas, and an assortment of modern facilities.</p>
+  </div>
+</div>
+
+
+<style>
+  .recent-posts-section {
+    padding: 60px 80px;
+    background: #fff;
+  }
+
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  .arrows {
+    display: flex;
+    gap: 8px;
+  }
+
+  .arrow {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .arrow:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  .recent-posts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .post-card {
+    width: 32%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    transition: 0.3s ease;
+  }
+
+  .post-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+
+  @media (max-width: 992px) {
+    .post-card { width: 48%; }
+  }
+
+  @media (max-width: 600px) {
+    .post-card { width: 100%; }
+  }
+
+  .post-content {
+    padding: 15px 18px 20px;
+  }
+
+  .post-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #777;
+  }
+
+  .post-meta div {
+    padding: 4px 10px;
+    background: #f7f7f7;
+    border-radius: 6px;
+  }
+
+  .post-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .post-desc {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .learn-more-btn {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    transition: 0.3s ease;
+  }
+
+  .learn-more-btn:hover {
+    background: #000;
+    color: #fff;
+  }
+</style>
+
+<section class="recent-posts-section">
+  <div class="header-row">
+    <h2 class="section-title">Recent Post</h2>
+    <div class="arrows">
+      <div class="arrow">‹</div>
+      <div class="arrow">›</div>
+    </div>
+  </div>
+
+  <div class="recent-posts">
+
+    <div class="post-card">
+      <img src="maw.jpg">
+      <div class="post-content">
+        <div class="post-meta">
+          <div>📅 03-03-2024</div>
+          <div>🏷️category name</div>
+        </div>
+        <div class="post-title">IT Solutions and Services</div>
+        <div class="post-desc">We have a sincere desire to make your business work quickly and efficiently.</div>
+        <a href="#" class="learn-more-btn">Learn More</a>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <img src="maw.jpg">
+      <div class="post-content">
+        <div class="post-meta">
+          <div>📅 03-03-2024</div>
+          <div>🏷️category name</div>
+        </div>
+        <div class="post-title">IT Solutions and Services</div>
+        <div class="post-desc">Our team is made up of experts well trained and highly experienced in this domain.</div>
+        <a href="#" class="learn-more-btn">Learn More</a>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <img src="maw.jpg">
+      <div class="post-content">
+        <div class="post-meta">
+          <div>📅 03-03-2024</div>
+          <div>🏷️category name</div>
+        </div>
+        <div class="post-title">IT Solutions and Services</div>
+        <div class="post-desc">We are committed to delivering efficient and innovative IT solutions.</div>
+        <a href="#" class="learn-more-btn">Learn More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  footer {
+    background: #121212;
+    color: white;
+    padding: 60px 80px 20px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .footer-left img {
+    width: 60px;
+    margin-bottom: 20px;
+  }
+
+  .footer-left p {
+    font-size: 15px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    color: #ddd;
+  }
+
+  .footer-left p i {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .footer-column h4 {
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+
+  .footer-column ul {
+    list-style: none;
+  }
+
+  .footer-column ul li {
+    margin-bottom: 10px;
+    color: #ccc;
+    cursor: pointer;
+  }
+
+  .footer-column ul li:hover {
+    color: white;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-icons a {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    background: #ff2b2b;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    padding-top: 15px;
+    text-align: center;
+    border-top: 1px solid #555;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  @media (max-width: 768px) {
+    footer { padding: 40px 20px; }
+    .footer-container { flex-direction: column; }
+  }
+</style>
+
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-left footer-column">
+      <img src="RIS logo.png" alt="Logo">
+      <p><i class="fas fa-envelope"></i> raghav@randomitsolutions.com</p>
+      <p><i class="fas fa-phone"></i> +91 8448870418, +91 8507541015</p>
+      <p><i class="fas fa-map-marker-alt"></i> 2315/23D, Near Atul Kataria Chowk,<br> Gurugram, Haryana 122001</p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Home</h4>
+      <ul>
+        <li>Introduction</li>
+        <li>Our Clients</li>
+        <li>Our Services</li>
+        <li>Team Management</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>About Us</h4>
+      <ul>
+        <li>Company</li>
+        <li>Achievements</li>
+        <li>Our Goals</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4>Follow Us On</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2024 Global Infotech. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>

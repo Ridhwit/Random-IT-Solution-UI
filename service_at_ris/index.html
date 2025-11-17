@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services at RIS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Be Vietnam Pro;
+      background-color: #fff;
+      color: #111;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 80px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo img {
+      height: 45px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #222;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #e63946;
+    }
+
+    .contact-btn {
+      background-color: #e0301e;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-btn:hover {
+      background-color: #c12717;
+    }
+
+    .hero {
+      position: relative;
+      background-image: url('ofc.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 80px;
+      color: white;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero-content h2 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .hero-content p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #fff;
+    }
+
+    .about-wrap {
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 0 24px;
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .about-img {
+      flex: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content {
+      flex: 1;
+    }
+
+    .eyebrow {
+      color: #e63946;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .title-row h2 {
+      font-size: 28px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .red-line {
+      flex: 1;
+      height: 2px;
+      background-color: #e63946;
+      margin-bottom: 4px;
+    }
+
+    .about-content p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #444;
+      text-align: justify;
+      margin-bottom: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1.5px solid #111;
+      border-radius: 4px;
+      background: #fff;
+      color: #111;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .inclusion-section {
+      max-width: 1200px;
+      margin: 60px auto;
+      background-color: #f9f9f9;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 30px 40px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .inclusion-content {
+      flex: 1;
+    }
+
+    .inclusion-content small {
+      color: #e63946;
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .inclusion-content h2 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .inclusion-content p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333;
+      text-align: justify;
+      margin-bottom: 14px;
+    }
+
+    .inclusion-image {
+      flex-shrink: 0;
+      width: 400px;
+      height: 400px;
+      border-radius: 6px;
+      overflow: hidden;
+      align-self: flex-start;
+    }
+
+    .inclusion-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        flex-direction: column;
+        padding: 15px 30px;
+      }
+
+      .about-wrap,
+      .inclusion-section {
+        flex-direction: column;
+      }
+
+      .hero-content h2 {
+        font-size: 28px;
+      }
+
+      .inclusion-image {
+        width: 100%;
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo"><img src="RIS logo.png" alt="RIS Logo"></div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Tech Partner</a></li>
+      <li><a href="#">Our Projects</a></li>
+      <li><a href="#">Our Services</a></li>
+      <li><a href="#">Career</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <button class="contact-btn">Contact Us</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Services at RIS</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+    </div>
+  </section>
+
+  <section class="about-wrap">
+    <figure class="about-img">
+      <img src="thum.jpg" alt="RIS Service">
+    </figure>
+    <div class="about-content">
+      <div class="eyebrow">About</div>
+      <div class="title-row">
+        <h2>RIS Service</h2>
+        <span class="red-line"></span>
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. </p>
+      <button class="btn">Learn More</button>
+    </div>
+  </section>
+
+  <section class="inclusion-section">
+    <div class="inclusion-content">
+      <small>Inclusions</small>
+      <div class="title-row">
+        <h2>In this Service</h2>
+        <span class="red-line"></span>
+      </div>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.
+      </p>
+    </div>
+    <div class="inclusion-image">
+      <img src="index.jpg" alt="Inclusion Image">
+    </div>
+  </section>
+
+<style>
+   body {
+  margin: 0;
+  font-family: Be Vietnam Pro;
+}
+
+.testimonials-section {
+  background-color: #111;
+  color: white;
+  padding: 60px 0;
+  text-align: left;
+}
+
+
+    .testimonials-section {
+      padding: 60px 0;
+      text-align: left;
+    }
+
+    .testimonials-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  padding-left: 80px;
+  position: relative;
+  line-height: 1.3;
+}
+
+.testimonials-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;              
+  left: 410px;           
+  width: calc(100% - 460px);
+  height: 2px;
+  background-color: white;
+}
+
+    .testimonials-section h2 span {
+      color: #e63946; 
+      font-weight: 600;
+    }
+
+    .testimonials {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-card {
+      background-color: #222;
+      border-radius: 10px;
+      padding: 25px;
+      width: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card p {
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    .profile img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile h4 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .profile p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: #bbb;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .dot {
+      width: 25px;
+      height: 6px;
+      background-color: #555;
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+
+    .dot.active {
+      background-color: #e63946; 
+    }
+  </style>
+</head>
+<body>
+
+  <section class="testimonials-section">
+    <div class="container">
+      <h2><span>See What Our</span><br>Clients Say About Us</h2>
+
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>This calendar app has been a <b>lifesaver!</b> I used to forget important events, but now I'm <b>always on top</b> of my schedule.</p>
+          <div class="profile">
+            <img src="smo.png" alt="Sophie Moore">
+            <div>
+              <h4>Sophie Moore</h4>
+              <p>Head of Marketing</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>I love how <b>user-friendly</b> this app is! It's so easy to add events and set reminders, and it’s made my life <b>so much more organized.</b></p>
+          <div class="profile">
+            <img src="sm.png" alt="Sophie More">
+            <div>
+              <h4>Sophie More</h4>
+              <p>CTO of Lambda</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>This app has <b>saved me so much time!</b> I used to constantly forget important dates and everything. <b>You should test it!</b></p>
+          <div class="profile">
+            <img src="ag.png" alt="Adam Gwadyr">
+            <div>
+              <h4>Adam Gwadyr</h4>
+              <p>Designer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </section> 
+
+  <div style="background-color: white; height: 80px;"></div>
+
+
+  <style>
+   footer {
+  background-color: #121212;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+
+    footer {
+      background-color: #121212;
+      padding: 60px 80px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-left img {
+      width: 60px;
+      margin-bottom: 20px;
+    }
+
+    .footer-left p {
+      display: flex;
+      align-items: center;
+      margin: 8px 0;
+      font-size: 15px;
+      color: #ddd;
+    }
+
+    .footer-left p i {
+      margin-right: 10px;
+      font-size: 16px;
+      color: white;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 15px;
+      font-size: 17px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .footer-column ul li:hover {
+      color: white;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #222;
+      border-radius: 6px;
+      width: 32px;
+      height: 32px;
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .social-icons a:hover {
+      background-color: #ff2b2b;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      border-top: 1px solid #555;
+      text-align: center;
+      padding-top: 15px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left footer-column">
+        <img src="RIS logo.png" alt="Logo">
+        <p><i class="fas fa-envelope"></i> raghav@randomitsolutions.com</p>
+        <p><i class="fas fa-phone"></i> +91 8448870418, +91 8507541015</p>
+        <p><i class="fas fa-map-marker-alt"></i> 2315/23D, 2nd floor, Near Atul Kataria Chowk,<br> behind Karim’s Hotel, Near Sec-14 Gurugram,<br> Haryana 122001</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Home</h4>
+        <ul>
+          <li>Introduction</li>
+          <li>Our Clients</li>
+          <li>Our Services</li>
+          <li>Team Management</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>About Us</h4>
+        <ul>
+          <li>Company</li>
+          <li>Achievements</li>
+          <li>Our Goals</li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Follow us on</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2024 Global Infotech. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
